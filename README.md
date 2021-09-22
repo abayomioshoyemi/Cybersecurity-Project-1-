@@ -22,3 +22,5 @@ Load balancing ensures that the application will be highly **relaiable**, in add
 - The jump box provides a point of entry into the virtual network from which we can connect to other servers, this increases security of the virtual network by greatly reducing the virtual network attack surface as it eliminates direct traffic from the internet. The jump host also makes it easier to log all the attempts and take necessary measures for failing attempts.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **logs** and system **metrics and statistics**
+- Filebeat fowards and centralize log data: File beat is installed as an agent on the webservers where it monitors the log files, it then collects the log events and sends them to Elasticsearch or logstash for indexing.
+- Metricbeat on the other hand collects system metrics and statistics and fowards them to speciied output in this case Elasticsearch and logstash, Installed on web1 and web2, metricbeat will help monitor the webservers by collecting metrics from the system and services running on the server. Metricbeat log files are visualized with Kibana dashboard.
