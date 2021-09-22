@@ -24,3 +24,17 @@ Load balancing ensures that the application will be highly **relaiable**, in add
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **logs** and system **metrics and statistics**
 - Filebeat fowards and centralize log data: File beat is installed as an agent on the webservers where it monitors the log files, it then collects the log events and sends them to Elasticsearch or logstash for indexing.
 - Metricbeat on the other hand collects system metrics and statistics and fowards them to speciied output in this case Elasticsearch and logstash, Installed on web1 and web2, metricbeat will help monitor the webservers by collecting metrics from the system and services running on the server. Metricbeat log files are visualized with Kibana dashboard.
+
+The configuration details of each machine may be found below.
+_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
+| Name     | Function | IP Address | Operating System |
+|------------|-------------|------------|----------------|
+| Jump Box   | Gateway     | 10.0.0.4   | Linux          |
+| Web1       | Webserver 1 | 10.0.0.5   | Linux          |
+| Web2       | Webserver 2 | 10.0.0.6   | Linux          |
+| ElK Server | Elk Server  | 10.1.0.4   | Linux          |
+
+
+
+
