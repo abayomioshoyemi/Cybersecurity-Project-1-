@@ -2,7 +2,7 @@
 Automated ELK Stack Deployment
 The files in this repository were used to configure the network depicted below.
 
-![Network](Images/Network Diagram.png)
+![VNet, Azure](Images/Network_Diagram.png)
 
 
 TODO: Update the path with the name of your diagram
