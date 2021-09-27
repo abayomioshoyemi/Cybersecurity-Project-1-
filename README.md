@@ -50,7 +50,7 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses        |
 |----------|---------------------|-----------------------------|
 | Jump Box | Yes                 | Home IP: 184.147.203.233    |
-| Web1     | No                  | 10.0.0.4                    |
+| web1     | No                  | 10.0.0.4                    |
 | web2     | No                  | 10.0.0.4                    |
 | ELK      | Yes                 | Home IP: 184.147.203.233    |
 
