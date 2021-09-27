@@ -36,5 +36,21 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | ElK Server | Elk Server  | 10.1.0.4   | Linux          |
 
 
+### Access Policies
+The machines on the internal network are not exposed to the public Internet. 
+Only the jumpbox virtual machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- My home network IP address: 184.147.203.233
 
+Machines within the network can only be accessed by my local workstation via the jumpbox virtual machine and the ELK over the internet  
+- Access to ELK server with in the virtual network: via jump host: IP address: 10.0.0.4,
+- Access to the ELK server from outside the virtual network: My home network IP address: 184.147.203.233
+
+A summary of the access policies in place can be found in the table below.
+
+| Name     | Publicly Accessible | Allowed IP Addresses        |
+|----------|---------------------|-----------------------------|
+| Jump Box | Yes                 | Home IP: 184.147.203.233    |
+| Web1     | No                  | 10.0.0.4                    |
+| web2     | No                  | 10.0.0.4                    |
+| ELK      | Yes                 | Home IP: 184.147.203.233    |
 
