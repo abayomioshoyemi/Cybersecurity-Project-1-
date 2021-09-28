@@ -136,3 +136,9 @@ SSH into the control node and follow the steps below:
 - The hosts file was updated as below to make Ansible run the playbook to specifed machines, the webserver and ELK server IP address were specified in the hosts file, while the webservers were specified as the target machines in .yml files for installing filebeat and metricbeat.  
 ![Screenshot, Hosts](Images/Hosts_file_update.png)
 - URL to check that the ELK server is running: http://13.64.144.89:5601/app/kibana#/home 
+
+**Bonus**, 
+Specific commands the user will need to run to download the playbook, update the files,
+- Command to run ansible playbook: __ansible-playbook installdvwa.yml__, where 'installdvwa.yml' is the playbook 
+- Command to see available Webservers: __ansible webservers -m ping__
+- Command to update playbook: __nano installdvwa.yml__, where 'installdvwa.yml' is the playbook  
