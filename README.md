@@ -112,3 +112,16 @@ The playbook implements the following tasks:
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![Screenshot, docker ps](Images/docker_ps_output.png)
+
+### Target Machines & Beats
+This ELK server is configured to monitor the following machines:
+- Webserver 1: 10.0.0.5
+- Webserver 2: 10.0.0.6
+
+We have installed the following Beats on these machines:
+- Filebeats and Metricbeats 
+
+These Beats allow us to collect the following information from each machine:
+- Filebeat monitors the log files or locations specified for the logs, collects log events, and forwards them either to Elasticsearch or Logstash for indexing, log types collected includes audit logs
+- Metricbeat on the other hand installed periodically collect metric data from your target servers, this included operating system metrics such as CPU or memory or data related to services running on the server. It can also be used to monitor other beats and ELK stack itself.
+
