@@ -120,6 +120,8 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 - Filebeats and Metricbeats 
+![Screenshot, Filebeat](Images/Filebeat_Install_OK.png)
+![Screenshot, Metricbeat](Images/Metricbeat_Install_Ok.png)
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat monitors the log files or locations specified for the logs, collects log events, and forwards them either to Elasticsearch or Logstash for indexing, log types collected includes audit logs
