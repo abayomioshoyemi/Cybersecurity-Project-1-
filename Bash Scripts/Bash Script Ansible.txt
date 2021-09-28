@@ -1,0 +1,304 @@
+abayo@AOshoyemi MINGW64 ~
+$ ssh Redadmin@20.106.144.81
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.8.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Sep  9 23:58:27 UTC 2021
+
+  System load:  0.0               Processes:             120
+  Usage of /:   4.7% of 28.90GB   Users logged in:       0
+  Memory usage: 26%               IPv4 address for eth0: 10.0.0.4
+  Swap usage:   0%
+
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Thu Sep  9 23:56:26 2021 from 184.147.203.233
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+Redadmin@Jump-Box-Provisioner:~$ sudo -l
+Matching Defaults entries for Redadmin on Jump-Box-Provisioner:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User Redadmin may run the following commands on Jump-Box-Provisioner:
+    (ALL : ALL) ALL
+    (ALL) NOPASSWD: ALL
+Redadmin@Jump-Box-Provisioner:~$ sudo apt update
+Hit:1 http://azure.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://azure.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 Packages [8628 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu focal/universe Translation-en [5124 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 c-n-f Metadata [265 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [144 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu focal/multiverse Translation-en [104 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu focal/multiverse amd64 c-n-f Metadata [9136 B]
+Get:11 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1205 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [258 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [14.2 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [442 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 c-n-f Metadata [504 B]
+Get:16 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [855 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [181 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [18.8 kB]
+Get:19 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [24.6 kB]
+Get:20 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [6776 B]
+Get:21 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [620 B]
+Get:22 http://azure.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [2568 B]
+Get:23 http://azure.archive.ubuntu.com/ubuntu focal-backports/main Translation-en [1120 B]
+Get:24 http://azure.archive.ubuntu.com/ubuntu focal-backports/main amd64 c-n-f Metadata [400 B]
+Get:25 http://azure.archive.ubuntu.com/ubuntu focal-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:26 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [5812 B]
+Get:27 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [2068 B]
+Get:28 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [288 B]
+Get:29 http://azure.archive.ubuntu.com/ubuntu focal-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:30 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [860 kB]
+Get:31 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [166 kB]
+Get:32 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [8692 B]
+Get:33 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [405 kB]
+Get:34 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [58.1 kB]
+Get:35 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 c-n-f Metadata [508 B]
+Get:36 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [639 kB]
+Get:37 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [101 kB]
+Get:38 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [12.4 kB]
+Get:39 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [21.9 kB]
+Get:40 http://security.ubuntu.com/ubuntu focal-security/multiverse Translation-en [4948 B]
+Get:41 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [540 B]
+Fetched 19.9 MB in 4s (5485 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Redadmin@Jump-Box-Provisioner:~$ sudo apt install docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base libidn11 pigz runc ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base docker.io libidn11 pigz runc ubuntu-fan
+0 upgraded, 9 newly installed, 0 to remove and 2 not upgraded.
+Need to get 74.4 MB of archives.
+After this operation, 360 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 bridge-utils amd64 1.6-2ubuntu1 [30.5 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 runc amd64 1.0.0~rc95-0ubuntu1~20.04.2 [4087 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 containerd amd64 1.5.2-0ubuntu1~20.04.2 [32.9 MB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 dns-root-data all 2019052802 [5300 B]
+Get:6 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 libidn11 amd64 1.33-2.2ubuntu2 [46.2 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 dnsmasq-base amd64 2.80-1.1ubuntu1.4 [315 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 docker.io amd64 20.10.7-0ubuntu1~20.04.1 [36.9 MB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 ubuntu-fan all 0.12.13 [34.5 kB]
+Fetched 74.4 MB in 5s (16.4 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... 59497 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.6-2ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.6-2ubuntu1) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.0.0~rc95-0ubuntu1~20.04.2_amd64.deb ...
+Unpacking runc (1.0.0~rc95-0ubuntu1~20.04.2) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_1.5.2-0ubuntu1~20.04.2_amd64.deb ...
+Unpacking containerd (1.5.2-0ubuntu1~20.04.2) ...
+Selecting previously unselected package dns-root-data.
+Preparing to unpack .../4-dns-root-data_2019052802_all.deb ...
+Unpacking dns-root-data (2019052802) ...
+Selecting previously unselected package libidn11:amd64.
+Preparing to unpack .../5-libidn11_1.33-2.2ubuntu2_amd64.deb ...
+Unpacking libidn11:amd64 (1.33-2.2ubuntu2) ...
+Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../6-dnsmasq-base_2.80-1.1ubuntu1.4_amd64.deb ...
+Unpacking dnsmasq-base (2.80-1.1ubuntu1.4) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../7-docker.io_20.10.7-0ubuntu1~20.04.1_amd64.deb ...
+Unpacking docker.io (20.10.7-0ubuntu1~20.04.1) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../8-ubuntu-fan_0.12.13_all.deb ...
+Unpacking ubuntu-fan (0.12.13) ...
+Setting up runc (1.0.0~rc95-0ubuntu1~20.04.2) ...
+Setting up dns-root-data (2019052802) ...
+Setting up libidn11:amd64 (1.33-2.2ubuntu2) ...
+Setting up bridge-utils (1.6-2ubuntu1) ...
+Setting up pigz (2.4-1) ...
+Setting up containerd (1.5.2-0ubuntu1~20.04.2) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.
+Setting up docker.io (20.10.7-0ubuntu1~20.04.1) ...
+Adding group `docker' (GID 121) ...
+Done.
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Setting up dnsmasq-base (2.80-1.1ubuntu1.4) ...
+Setting up ubuntu-fan (0.12.13) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.
+Processing triggers for systemd (245.4-4ubuntu3.11) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+Redadmin@Jump-Box-Provisioner:~$ sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2021-09-10 01:01:00 UTC; 1min 19s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 3588 (dockerd)
+      Tasks: 8
+     Memory: 47.3M
+     CGroup: /system.slice/docker.service
+             └─3588 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.024682793Z" level=warning msg="Your kernel does not support cgroup blkio weight"
+Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.024820494Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.025151896Z" level=info msg="Loading containers: start."
+Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.273979437Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemo>Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.374485800Z" level=info msg="Loading containers: done."
+Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.623898145Z" level=warning msg="Not using native diff for overlay2, this may cause degraded performance f>Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.624336348Z" level=info msg="Docker daemon" commit="20.10.7-0ubuntu1~20.04.1" graphdriver(s)=overlay2 ver>Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.624722851Z" level=info msg="Daemon has completed initialization"
+Sep 10 01:01:00 Jump-Box-Provisioner systemd[1]: Started Docker Application Container Engine.
+Sep 10 01:01:00 Jump-Box-Provisioner dockerd[3588]: time="2021-09-10T01:01:00.696753126Z" level=info msg="API listen on /run/docker.sock"
+Redadmin@Jump-Box-Provisioner:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+Redadmin@Jump-Box-Provisioner:~$ sudo docker pull cyberxsecurity/ubuntu:bionic
+bionic: Pulling from cyberxsecurity/ubuntu
+5bed26d33875: Pull complete
+f11b29a9c730: Pull complete
+930bda195c84: Pull complete
+78bf9a5ad49e: Pull complete
+Digest: sha256:e5dd9dbb37df5b731a6688fa49f4003359f6f126958c9c928f937bec69836320
+Status: Downloaded newer image for cyberxsecurity/ubuntu:bionic
+docker.io/cyberxsecurity/ubuntu:bionic
+Redadmin@Jump-Box-Provisioner:~$ sudo docker pull cyberxsecurity/ansible
+Using default tag: latest
+latest: Pulling from cyberxsecurity/ansible
+345e3491a907: Pull complete
+57671312ef6f: Pull complete
+5e9250ddb7d0: Pull complete
+06c2579b8983: Pull complete
+Digest: sha256:1e59530cfc0fb86b8fefdc2c7b0666e053c9f53a339639fb34e99ffee9812730
+Status: Downloaded newer image for cyberxsecurity/ansible:latest
+docker.io/cyberxsecurity/ansible:latest
+Redadmin@Jump-Box-Provisioner:~$ sudo docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+cyberxsecurity/ansible   latest    7d2d9fa20ccf   3 months ago    754MB
+cyberxsecurity/ubuntu    bionic    4e5021d210f6   17 months ago   64.2MB
+Redadmin@Jump-Box-Provisioner:~$ sudo docker run -ti cyberxsecurity/ubuntu:bionic bash
+root@d1586259d0aa:/# exit
+exit
+Redadmin@Jump-Box-Provisioner:~$ sudo docker run -ti cyberxsecurity/ubuntu:bionic sh
+#
+# exit
+Redadmin@Jump-Box-Provisioner:~$ sudo docker ps -a
+CONTAINER ID   IMAGE                          COMMAND   CREATED              STATUS                      PORTS     NAMES
+6003fbeb4002   cyberxsecurity/ubuntu:bionic   "sh"      About a minute ago   Exited (0) 14 seconds ago             musing_gates
+d1586259d0aa   cyberxsecurity/ubuntu:bionic   "bash"    4 minutes ago        Exited (0) 2 minutes ago              frosty_jepsen
+Redadmin@Jump-Box-Provisioner:~$ sudo docker run -ti cyberxsecurity/ansible bash
+root@a8372bfaa6b4:~# exist
+bash: exist: command not found
+root@a8372bfaa6b4:~# exit
+exit
+Redadmin@Jump-Box-Provisioner:~$ sudo docker container list -a
+CONTAINER ID   IMAGE                          COMMAND                  CREATED              STATUS                        PORTS     NAMES
+a8372bfaa6b4   cyberxsecurity/ansible         "/bin/sh -c /bin/bas…"   About a minute ago   Exited (127) 28 seconds ago             eager_gagarin
+6003fbeb4002   cyberxsecurity/ubuntu:bionic   "sh"                     3 minutes ago        Exited (0) 2 minutes ago                musing_gates
+d1586259d0aa   cyberxsecurity/ubuntu:bionic   "bash"                   6 minutes ago        Exited (0) 4 minutes ago                frosty_jepsen
+Redadmin@Jump-Box-Provisioner:~$ sudo docker run -ti cyberxsecurity/ansible bash
+root@0036c9811e29:~# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:EuvkxmLqnUi2NerWOqJmSuyyGm6drYmog/5oukH10PM root@0036c9811e29
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|    .            |
+|   o o.          |
+|  . o oo         |
+| .   .+ES        |
+|o    = .         |
+|+o+.B =          |
+|XX=@o*           |
+|^#X*+            |
++----[SHA256]-----+
+root@0036c9811e29:~# cat /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDF3+7Qoy/W9v2I2iG57yTohbgL/veVSYUfx8vmGTTZbfIkRFrSmC4SRzHsaHe3oB94yGX2GiHdjQX1QwWrUiLlXu1JRA0yPm0z2T3Qj5xtszrOv0jZlTFIsvwKbgpXugAGGXHWXS1v1KiXSagFPgvmbiyQWzjGj3RM1ClkbVvG0ZfniulixCc120Sd79mcD4jvjdVRrnyYOwsOtpaJUJzwuV4MaQA+BzAsV4Y9v05COzSoTD4H9KNHJT2onZdKpM/PBqU4o/X5OFqIO9Pq7OCWydoFsumRvDYoB7msmIs3XQb1efqzruygswYwoXWAZoIrBFNzNfpZDkLPlSv6ooQnUksZhddt9GtkuPWFK1sD/GZudlQb/wIWdgklQFu4O8dyYqDwOMK4gQJkUAQ1Ahs3PNESev4nOxk+4SlGrulglxZTp/9GUPIbBOXwEkTPH4bVCv8POEjHD6vG8Y4e4DQsUmRQsS+AMfCZWIyrKrLCNB0X8Vf7cWoBXybDWvmgDm0= root@0036c9811e29
+root@0036c9811e29:~# ssh sysadmin@10.0.0.5
+The authenticity of host '10.0.0.5 (10.0.0.5)' can't be established.
+ECDSA key fingerprint is SHA256:j3hrKNxQX43lIDQjF/pbDMUCNkQZoo88SJpcWOnwi74.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.0.0.5' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.8.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Sep 10 01:37:18 UTC 2021
+
+  System load:  0.0               Processes:             115
+  Usage of /:   4.6% of 28.90GB   Users logged in:       0
+  Memory usage: 13%               IPv4 address for eth0: 10.0.0.5
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+sysadmin@Web-1:~$ exit
+logout
+Connection to 10.0.0.5 closed.
+root@0036c9811e29:~# exit
+exit
+Redadmin@Jump-Box-Provisioner:~$ sudo docker ps -a
+CONTAINER ID   IMAGE                          COMMAND                  CREATED          STATUS                        PORTS     NAMES
+0036c9811e29   cyberxsecurity/ansible         "/bin/sh -c /bin/bas…"   14 minutes ago   Exited (0) 15 seconds ago               sharp_johnson
+a8372bfaa6b4   cyberxsecurity/ansible         "/bin/sh -c /bin/bas…"   23 minutes ago   Exited (127) 22 minutes ago             eager_gagarin
+6003fbeb4002   cyberxsecurity/ubuntu:bionic   "sh"                     25 minutes ago   Exited (0) 24 minutes ago               musing_gates
+d1586259d0aa   cyberxsecurity/ubuntu:bionic   "bash"                   28 minutes ago   Exited (0) 26 minutes ago               frosty_jepsen
+Redadmin@Jump-Box-Provisioner:~$
+
+Redadmin@Jump-Box-Provisioner:~$ sudo docker start -i sharp_johnson
+root@0036c9811e29:~# exit
+exit
+Redadmin@Jump-Box-Provisioner:~$
+
+Redadmin@Jump-Box-Provisioner:~$ sudo docker start -i sharp_johnson
+root@0036c9811e29:~# exit
+exit
+Redadmin@Jump-Box-Provisioner:~$
+
+
+sudo docker container list -a 
+sudo docker start container name
+

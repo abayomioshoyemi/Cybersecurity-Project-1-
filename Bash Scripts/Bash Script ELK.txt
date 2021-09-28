@@ -1,0 +1,197 @@
+
+abayo@AOshoyemi MINGW64 ~
+$ ssh sysadmin@13.64.144.89
+The authenticity of host '13.64.144.89 (13.64.144.89)' can't be established.
+ED25519 key fingerprint is SHA256:lA7RPSIbLMmo0W5aq8M6mD/QDeDETFmuQ2ZBuTyyuTY.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '13.64.144.89' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.8.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Sep 16 23:39:22 UTC 2021
+
+  System load:  0.0               Processes:             124
+  Usage of /:   4.5% of 28.90GB   Users logged in:       0
+  Memory usage: 6%                IPv4 address for eth0: 10.1.0.4
+  Swap usage:   0%
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+sysadmin@ELK-Server:~$ exit
+logout
+Connection to 13.64.144.89 closed.
+
+abayo@AOshoyemi MINGW64 ~
+$ ssh Redadmin@20.106.144.81
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.8.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Sep 16 23:45:37 UTC 2021
+
+  System load:  0.16              Processes:                120
+  Usage of /:   9.9% of 28.90GB   Users logged in:          0
+  Memory usage: 37%               IPv4 address for docker0: 172.17.0.1
+  Swap usage:   0%                IPv4 address for eth0:    10.0.0.4
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Tue Sep 14 22:41:12 2021 from 184.147.203.233
+Redadmin@Jump-Box-Provisioner:~$ sudo docker container list -a
+CONTAINER ID   IMAGE                          COMMAND                  CREATED      STATUS                      PORTS     NAMES
+0036c9811e29   cyberxsecurity/ansible         "/bin/sh -c /bin/bas…"   6 days ago   Exited (137) 47 hours ago             sharp_johnson
+a8372bfaa6b4   cyberxsecurity/ansible         "/bin/sh -c /bin/bas…"   6 days ago   Exited (127) 6 days ago               eager_gagarin
+6003fbeb4002   cyberxsecurity/ubuntu:bionic   "sh"                     6 days ago   Exited (0) 6 days ago                 musing_gates
+d1586259d0aa   cyberxsecurity/ubuntu:bionic   "bash"                   6 days ago   Exited (0) 6 days ago                 frosty_jepsen
+Redadmin@Jump-Box-Provisioner:~$ sudo docker start -i sharp_johnson
+root@0036c9811e29:~# ls -A
+.ansible  .bash_history  .bashrc  .cache  .local  .profile  .ssh
+root@0036c9811e29:~# cd .ssh
+root@0036c9811e29:~/.ssh# ls -A
+id_rsa  id_rsa.pub  known_hosts
+root@0036c9811e29:~/.ssh# cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDF3+7Qoy/W9v2I2iG57yTohbgL/veVSYUfx8vmGTTZbfIkRFrSmC4SRzHsaHe3oB94yGX2GiHdjQX1QwWrUiLlXu1JRA0yPm0z2T3Qj5xtszrOv0jZlTFIsvwKbgpXugAGGXHWXS1v1KiXSagFPgvmbiyQWzjGj3RM1ClkbVvG0ZfniulixCc120Sd79mcD4jvjdVRrnyYOwsOtpaJUJzwuV4MaQA+BzAsV4Y9v05COzSoTD4H9KNHJT2onZdKpM/PBqU4o/X5OFqIO9Pq7OCWydoFsumRvDYoB7msmIs3XQb1efqzruygswYwoXWAZoIrBFNzNfpZDkLPlSv6ooQnUksZhddt9GtkuPWFK1sD/GZudlQb/wIWdgklQFu4O8dyYqDwOMK4gQJkUAQ1Ahs3PNESev4nOxk+4SlGrulglxZTp/9GUPIbBOXwEkTPH4bVCv8POEjHD6vG8Y4e4DQsUmRQsS+AMfCZWIyrKrLCNB0X8Vf7cWoBXybDWvmgDm0= root@0036c9811e29
+root@0036c9811e29:~/.ssh# cd ..
+root@0036c9811e29:~# cd ..
+root@0036c9811e29:/# pwd
+/
+root@0036c9811e29:/# ssh sysadmin@13.64.144.89
+ssh: connect to host 13.64.144.89 port 22: Connection timed out
+root@0036c9811e29:/# ssh sysadmin@10.1.0.4
+The authenticity of host '10.1.0.4 (10.1.0.4)' can't be established.
+ECDSA key fingerprint is SHA256:uwphTsaS+51NsA2XP4AQw4UpKJHrUCtgHOmoXZ1/ACc.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.1.0.4' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.8.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Sep 17 00:01:33 UTC 2021
+
+  System load:  0.35              Processes:             127
+  Usage of /:   4.6% of 28.90GB   Users logged in:       0
+  Memory usage: 6%                IPv4 address for eth0: 10.1.0.4
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Thu Sep 16 23:39:24 2021 from 184.147.203.233
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+sysadmin@ELK-Server:~$ exit
+logout
+Connection to 10.1.0.4 closed.
+root@0036c9811e29:/# cd /etc/ansible
+root@0036c9811e29:/etc/ansible# ls -A
+ansible.cfg  hosts  installdvwa.yml
+root@0036c9811e29:/etc/ansible# nano hosts
+root@0036c9811e29:/etc/ansible# nano hosts
+root@0036c9811e29:/etc/ansible# nano install-elk.yml
+root@0036c9811e29:/etc/ansible# nano installdvwa.yml
+root@0036c9811e29:/etc/ansible# nano install-elk.yml
+root@0036c9811e29:/etc/ansible# ls -A
+ansible.cfg  hosts  install-elk.yml  installdvwa.yml
+root@0036c9811e29:/etc/ansible# ansible-playbook install-elk.yml
+[WARNING]: ansible.utils.display.initialize_locale has not been called, this may result in incorrectly calculated text widths that can cause Display to print incorrect
+line lengths
+
+PLAY [Configure Elk VM with Docker] *************************************************************************************************************************************
+TASK [Gathering Facts] **************************************************************************************************************************************************fatal: [10.1.0.4]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Redadmin@10.1.0.4: Permission denied (publickey).", "unreachable": true}
+
+PLAY RECAP **************************************************************************************************************************************************************10.1.0.4                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+
+root@0036c9811e29:/etc/ansible# nano install-elk.yml
+root@0036c9811e29:/etc/ansible# ansible-playbook install-elk.yml
+[WARNING]: ansible.utils.display.initialize_locale has not been called, this may result in incorrectly calculated text widths that can cause Display to print incorrect line lengths
+
+PLAY [Configure Elk VM with Docker] ****************************************************************************************************************************************************************
+TASK [Gathering Facts] *****************************************************************************************************************************************************************************ok: [10.1.0.4]
+
+TASK [Install docker.io] ***************************************************************************************************************************************************************************changed: [10.1.0.4]
+
+TASK [Install python3-pip] *************************************************************************************************************************************************************************changed: [10.1.0.4]
+
+TASK [Install Docker module] ***********************************************************************************************************************************************************************changed: [10.1.0.4]
+
+TASK [Increase virtual memory] *********************************************************************************************************************************************************************changed: [10.1.0.4]
+
+TASK [Use more memory] *****************************************************************************************************************************************************************************changed: [10.1.0.4]
+
+TASK [download and launch a docker elk container] **************************************************************************************************************************************************[DEPRECATION WARNING]: The container_default_behavior option will change its default value from "compatibility" to "no_defaults" in community.docker 2.0.0. To remove this warning, please specify
+an explicit value for it now. This feature will be removed from community.docker in version 2.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+changed: [10.1.0.4]
+
+TASK [Enable service docker on boot] ***************************************************************************************************************************************************************ok: [10.1.0.4]
+
+PLAY RECAP *****************************************************************************************************************************************************************************************10.1.0.4                   : ok=8    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+root@0036c9811e29:/etc/ansible# ssh sysadmin@10.1.0.4
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.8.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ System information disabled due to load higher than 2.0
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+11 updates can be applied immediately.
+10 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Fri Sep 17 00:50:53 2021 from 10.0.0.4
+sysadmin@ELK-Server:~$ docker ps
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json: dial unix /var/run/docker.sock: connect: permission denied
+sysadmin@ELK-Server:~$ docker container list -a
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1: dial unix /var/run/docker.sock: connect: permission denied
+sysadmin@ELK-Server:~$ sudo docker container list -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                                                                              NAMES
+3f04595f407f   sebp/elk:761   "/usr/local/bin/star…"   7 minutes ago   Up 7 minutes   0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
+sysadmin@ELK-Server:~$
