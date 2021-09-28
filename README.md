@@ -54,3 +54,61 @@ A summary of the access policies in place can be found in the table below.
 | web2     | No                  | 10.0.0.4                    |
 | ELK      | Yes                 | Home IP: 184.147.203.233    |
 
+### Elk Configuration
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+- Ansible provides the automation platform for configuration management and application deployment on multiple infrastructure  
+  basically as single ansible playbook can be used for configuration management and application deployment multiple servers 
+- Ansible uses no agents and no additional custom security infrastructure, so it's easy to deploy, also it uses a very simple language YAML (Ansible Playbooks) that allows the description of automation jobs in plan English 
+
+The playbook implements the following tasks:
+ * Install Docker.io 
+    - name: Install docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: present
+        
+* Install Pythonm pip 
+    - name: Install python3-pip
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+
+* Install Docker Module
+    - name: Install Docker module
+      pip:
+        name: docker
+        state: present
+
+* Increase virtual memory 
+    - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: '262144'
+        state: present
+        reload: yes 
+
+* Use docker_container module
+    - name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+* Please list the ports that ELK runs on
+        published_ports:
+          -  5601:5601
+          -  9200:9200
+          -  5044:5044
+
+* Use systemd module
+    - name: Enable service docker on boot
+      systemd:
+        name: docker
+        enabled: yes
+
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
+![Screenshot, docker ps](Images/docker_ps_output.png)
