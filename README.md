@@ -125,3 +125,14 @@ These Beats allow us to collect the following information from each machine:
 - Filebeat monitors the log files or locations specified for the logs, collects log events, and forwards them either to Elasticsearch or Logstash for indexing, log types collected includes audit logs
 - Metricbeat on the other hand installed periodically collect metric data from your target servers, this included operating system metrics such as CPU or memory or data related to services running on the server. It can also be used to monitor other beats and ELK stack itself.
 
+### Using the Playbook
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+
+SSH into the control node and follow the steps below:
+- Copy the playbook file to /etc/ansible/.
+- Update the host file to include target webservers or the elk server in this case
+- Run the playbook, and navigate to commandline to check that the installation worked as expected.
+- The Playbook is a .yml file copied into the path /etc/ansible on the jumphost 
+- The hosts file was updated as below to make Ansible run the playbook to specifed machines, the webserver and ELK server IP address were specified in the hosts file, while the webservers were specified as the target machines in .yml files for installing filebeat and metricbeat.  
+![Screenshot, Hosts](Images/Hosts_file_update.png)
+- URL to check that the ELK server is running: http://13.64.144.89:5601/app/kibana#/home 
