@@ -130,7 +130,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook file to /etc/ansible/.
-- Update the host file to include target webservers or the elk server in this case
+- Update the host file to include target machines, webservers web1 and web2 the elk server in this case
 - Run the playbook, and navigate to commandline to check that the installation worked as expected.
 - The Playbook is a .yml file copied into the path /etc/ansible on the jumphost 
 - The hosts file was updated as below to make Ansible run the playbook to specifed machines, the webserver and ELK server IP address were specified in the hosts file, while the webservers were specified as the target machines in .yml files for installing filebeat and metricbeat.  
